@@ -223,7 +223,7 @@ li {
     margin-right: 30px;
 }
 .cart button {
-    transform: translate(70px,-10px);
+    transform: translate(70px,-25px);
     height: 5vh;
     width: 130px;
     background-color: rgb(206, 134, 0);
@@ -559,7 +559,7 @@ li {
     height: 46px;
     width: 340px;
     font-size: 17px;
-    transform: translate(600px,10px);
+    transform: translate(600px,-30px);
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: rgb(201, 145, 4);
     border-radius: 3px;
@@ -976,7 +976,7 @@ li {
     text-align: center;
     font-size: 22px;
 }
-.newsletter {
+/* .newsletter {
     height: 50vh;
     width: 100%;
     background-color: rgb(179, 176, 176);
@@ -986,7 +986,7 @@ li {
     background-size: cover;
     background-repeat: no-repeat;
     background-blend-mode: multiply;
-}
+} */
 /* .sub p {
     font-size: 45px;
     font-style: italic;
@@ -1064,7 +1064,7 @@ li {
 footer {
     background-color: black;
     height: 160vh;
-    width: 160%;
+    width: 180%;
     margin-top: 50px;
 }
 }
