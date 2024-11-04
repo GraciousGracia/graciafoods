@@ -447,7 +447,7 @@ footer {
     width: 50%;
     background-color: rgb(179, 176, 176);
     margin-left: 25%;
-    background-image: url("Gracia photos/67700_RichPastaforthePoorKitchen_ddmfs_4x3_2284-220302ec8328442096df370dede357d7.jpg");
+    background-image: url("67700_RichPastaforthePoorKitchen_ddmfs_4x3_2284-220302ec8328442096df370dede357d7.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -559,7 +559,7 @@ li {
     height: 46px;
     width: 340px;
     font-size: 17px;
-    transform: translate(600px,30px);
+    transform: translate(600px,10px);
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: rgb(201, 145, 4);
     border-radius: 3px;
@@ -597,12 +597,12 @@ li {
         /* scroll-margin-top: 60px; */
     }
     section {
-        background-image: url("Gracia photos/AlFanarRestaurant-FoodstoTry-ccad8a49e0c34203989d7b9b799ccbc0.png");
+        background-image: url("AlFanarRestaurant-FoodstoTry-ccad8a49e0c34203989d7b9b799ccbc0.png");
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
         height: 100vh;
-        width: 170%;
+        width: 180%;
         margin-top: 80px;
         background-color: rgb(73, 72, 72);
         background-blend-mode: soft-light; 
@@ -820,8 +820,8 @@ li {
     }
     #reserve {
         height: 85vh;
-        width: 163%;
-        background-image: url("Gracia photos/distracted-driving-can-increase-the-chance-of-a-road-accident.jpg");
+        width: 166%;
+        background-image: url("distracted-driving-can-increase-the-chance-of-a-road-accident.jpg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -981,20 +981,20 @@ li {
     width: 100%;
     background-color: rgb(179, 176, 176);
     margin-left: 0px;
-    background-image: url("Gracia photos/67700_RichPastaforthePoorKitchen_ddmfs_4x3_2284-220302ec8328442096df370dede357d7.jpg");
+    background-image: url("/67700_RichPastaforthePoorKitchen_ddmfs_4x3_2284-220302ec8328442096df370dede357d7.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-blend-mode: multiply;
 }
-.sub p {
+/* .sub p {
     font-size: 45px;
     font-style: italic;
     text-align: center;
     color: white;
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin-top: 5px;
-}
+} */
 /* .newsletter form { */
     /* background-color: yellow;
     height: 60vh;
