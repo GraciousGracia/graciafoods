@@ -223,7 +223,7 @@ li {
     margin-right: 30px;
 }
 .cart button {
-    transform: translate(70px,-25px);
+    transform: translate(50px,15px);
     height: 5vh;
     width: 130px;
     background-color: rgb(206, 134, 0);
@@ -559,7 +559,7 @@ li {
     height: 46px;
     width: 340px;
     font-size: 17px;
-    transform: translate(600px,-30px);
+    transform: translate(400px,30px);
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: rgb(201, 145, 4);
     border-radius: 3px;
