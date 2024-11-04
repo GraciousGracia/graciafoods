@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="short icon" href="DRINKS.jpg">
+    <title>Gracia drinks</title>
+</head>
+<body>
+    <style>
+        body {
+            background-color: gray;
+            overflow-y: hidden;
+        }
+        .boxes {
+            height: 39vh;
+            width: 30%;
+            background-color: black;
+            margin: auto;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px black;
+        }
+        .position { 
+            display: flex;
+            /* flex-direction: row; */
+            gap: 15px;
+        }
+        .position2 {
+            display: flex;
+            flex-direction: column;
+        }
+        #hold{
+            height: 80vh;
+            width: 62%;
+            background: none;
+            margin: auto;
+            margin-top: 35px;
+            display: flex;
+            flex-direction: column;
+            gap: 3%;
+        }
+        #dash {
+            height: 12vh;
+            width: 47%;
+            background-color: black;
+            margin: auto;
+            border-radius: 4px;
+        } 
+        .allbtn button {
+            height: 7vh;
+            width: 25%;
+            margin-top: 15px;
+            background-color: goldenrod;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 21px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+        .allbtn {
+            margin-left: 170px;
+        }
+        .boxes h1 {
+            color: white;
+            font-size: 18px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-align: center;
+            transform: translate(0px,-18px);
+        }
+        .boxes h2 {
+            color: white;
+            font-size: 18px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-align: center;
+            transform: translate(0px,-36px);
+        }
+        .images img {
+            height: 25vh;
+            width: 77%;
+            margin-left: 29px;
+            margin-top: 10px;
+        }
+        .boxes button {
+            height: 5.7vh;
+            width: 36%;
+            background-color: goldenrod;
+            transform: translate(0px,-49px);
+            border: none;
+            margin-left: 85px;
+            border-radius: 4px;
+            font-size: 18px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        form {
+            height: 98vh;
+            width: 30%;
+            background-color: white;
+            border-radius: 5px;
+            margin: auto;
+            display: none;
+            margin-top: 10px;
+            animation-name: form;
+            animation-duration: .8s;
+        }
+        @keyframes form {
+            from {
+                margin-top: 500px;
+            }
+            to {
+                margin-top: 10px;
+            }
+        }
+        .main-input {
+            display: flex;
+            flex-direction: column;
+        }
+        .main-input input {
+            height: 32px;
+            width: 70%;
+            margin: auto;
+            padding-left: 10px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .main-input label {
+            font-size: 15px;
+            margin: auto;
+            margin-top: 10px;
+        }
+        .submitbtn {
+            margin-left: 28%;
+            margin-top: 10px;
+        }
+        .submitbtn button{
+            height: 30px;
+            width: 100px;
+            background-color: gray;
+            border: 2px solid goldenrod;
+            font-size: 17px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            cursor: pointer;
+            font-weight: bold;
+        } 
+        #announce {
+            background-color: black;
+            border-radius: 3px;
+            height: 70px;
+            width: 20%;
+            margin-left: 70%;
+            margin-top: -44%;
+            display: none;
+            animation-name: instruction;
+            animation-duration: .8s;
+        }
+        #announce h3 {
+            font-size: 17px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: white;
+            text-align: center;
+        }
+        @keyframes instruction {
+            from {
+                margin-left: 100%;
+            }
+            to {
+                margin-left: 70%;
+            }
+        }
+        .main-input .wrong {
+            font-size: 15px;
+            text-align: center;
+            color: red;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .valid input {
+            border: 2px solid green;
+        }
+        .invalid input {
+            border: 3px solid red;
+        }
+        @media screen and (min-width:320px) and (max-width:480px){
+        #dash {
+            height: 8vh;
+            width: 92%;
+            background-color: black;
+            margin: auto;
+            border-radius: 4px;
+        } 
+        .allbtn button {
+            height: 6vh;
+            width: 32%;
+            margin-top: 8px;
+            background-color: goldenrod;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 18px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+        .allbtn {
+            margin-left: 16.5Px;
+        }
+        #hold{
+            height: 80vh;
+            width: 62%;
+            background: none;
+            margin: auto;
+            margin-top: 35px;
+            display: flex;
+            flex-direction: column;
+            gap: 3%;
+        }
+        .position2 {
+            display: flex;
+            flex-direction: column;
+        }
+        .position { 
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .boxes {
+            height: 39vh;
+            width: 100%;
+            background-color: black;
+            margin: auto;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px black;
+        }
+        form {
+            height: 98vh;
+            width: 92%;
+            background-color: white;
+            border-radius: 5px;
+            margin: auto;
+            display: none;
+            margin-top: 80px;
+            animation-name: form;
+            animation-duration: .8s;
+        }
+        @keyframes form {
+            from {
+                margin-top: 500px;
+            }
+            to {
+                margin-top: 80px;
+            }
+        }
+        .main-input input {
+            height: 33px;
+            width: 70%;
+            margin: auto;
+            padding-left: 10px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 18px;
+            border: 3px solid goldenrod;
+            border-radius: 5px;
+        }
+        .main-input label {
+            font-size: 20px;
+            margin: auto;
+            margin-top: 10px;
+            font-weight: bold;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        body {
+            background-color: white;
+            overflow-y: scroll;
+        }
+        #announce {
+            background-color: black;
+            border-radius: 3px;
+            height: 70px;
+            width: 60%;
+            margin-left: 23%;
+            margin-top: -200%;
+            display: none;
+            animation-name: instruction;
+            animation-duration: .8s;
+        }
+        #announce h3 {
+            font-size: 17px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: white;
+            text-align: center;
+        }
+        @keyframes instruction {
+            from {
+                margin-left: 100%;
+            }
+            to {
+                margin-left: 23%;
+            }
+        }
+        }
+        @media screen and (min-width:481px) and (max-width:768px){
+        #dash {
+            height: 12vh;
+            width: 87%;
+            background-color: black;
+            margin: auto;
+            border-radius: 4px;
+            display: none;
+        } 
+        #hold{
+            height: 80vh;
+            width: 100%;
+            background: none;
+            margin: auto;
+            margin-top: 35px;
+            display: flex;
+            flex-direction: column;
+            gap: 3%;
+            display: none;
+        }
+        .boxes button {
+            height: 5.5vh;
+            width: 40%;
+            background-color: goldenrod;
+            transform: translate(0px,-48px);
+            border: none;
+            margin-left: 70px;
+            border-radius: 4px;
+            font-size: 18px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .boxes {
+            height: 39vh;
+            width: 32%;
+            background-color: black;
+            margin: auto;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px black;
+        }
+        form {
+            height: 115vh;
+            width: 60%;
+            background-color: white;
+            border-radius: 5px;
+            margin: auto;
+            display: block;
+            margin-top: 10px;
+            animation-name: form;
+            animation-duration: .8s;
+        }
+        @keyframes form {
+            from {
+                margin-top: 500px;
+            }
+            to {
+                margin-top: 10px;
+            }
+        }
+        .main-input input {
+            height: 40px;
+            width: 70%;
+            margin: auto;
+            font-size: 18px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            padding-left: 10px;
+            border: 1px solid black;
+        }
+        .main-input label {
+            font-size: 18px;
+            margin: auto;
+            margin-top: 10px;
+            font-weight: bold;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .submitbtn button {
+            height: 45px;
+            width: 100px;
+            background-color: gray;
+            border: 2px solid goldenrod;
+            font-size: 20px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        .main-input .wrong {
+            font-size: 16px;
+            text-align: center;
+            color: red;
+            font-family: Georgia, 'Times New Roman', Times, serif; 
+        }
+        .valid input {
+            border: 2px solid green;
+        }
+        .invalid input {
+            border: 2px solid red;
+        }
+        body {
+            background-color: gray;
+            overflow-y: scroll;
+        }
+        }
+    </style> 
+    <section>
+        <div id="dash">
+            <div class="allbtn">
+                <button style="border: 2px solid white;" id="wine">wine</button>
+                <button id="juice">juice</button>
+                <button id="soft">soft drink</button>
+            </div>
+        </div>
+        <div>
+        <div id="hold">
+            <div class="position">
+                <div class="boxes">
+                    <div class="images">
+                        <img src="joyus.jpg" alt="" id="image01">
+                    </div>
+                    <h1 id="text1">Joyus</h1>
+                    <h2 id="font1">$7.20</h2>
+                    <button id="btnclick">Order</button>
+                </div>
+                <div class="boxes">
+                    <div class="images">
+                        <img src="hands.jpg" alt="" id="image02">
+                    </div>
+                    <h1 id="text2">Hands on heart</h1>
+                    <h2 id="font2">$8.50</h2>
+                    <button id="btnclick2">Order</button>
+                </div>
+                <div class="boxes">
+                    <div class="images">
+                        <img src="allay.jpg" alt="" id="image03">
+                    </div>
+                    <h1 id="text3">Allay</h1>
+                    <h2 id="font3">$5.00</h2>
+                    <button id="btnclick3">Order</button>
+                </div>
+            </div>
+            <div class="position">
+                <div class="boxes">
+                    <div class="images">
+                        <img src="Carl-Jung-Merlot-with-glass.jpg" alt="" id="image04">
+                    </div>
+                    <h1 id="text4">Carl jung</h1>
+                    <h2 id="font4">$7.40</h2>
+                    <button id="btnclick4">Order</button>
+                </div>
+                <div class="boxes">
+                    <div class="images">
+                        <img src="noughty.png" alt="" id="image05">
+                    </div>
+                    <h1 id="text5">Noughty</h1>
+                    <h2 id="font5">$9.56</h2>
+                    <button id="btnclick5">Order</button>
+                </div>
+                <div class="boxes">
+                    <div class="images">
+                        <img src="french.jpg" alt="" id="image06">
+                    </div>
+                    <h1 id="text6">French bloom</h1>
+                    <h2 id="font6">$8.56</h2>
+                    <button id="btnclick6">Order</button>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <div>
+        <form id="fill">
+            <div class="main-input">
+                <label>Name</label>
+                <input type="text" placeholder="Enter your name" id="name">
+                <div class="wrong"></div>
+            </div>
+            <div class="main-input">
+                <label>Email</label>
+                <input type="text" placeholder="Enter your Email-address" id="mail">
+                <div class="wrong"></div>
+            </div>
+            <div class="main-input">
+                <label>Mobile number</label>
+                <input type="number" placeholder="Enter your mobile number" id="mobile">
+                <div class="wrong"></div>
+            </div>
+            <div class="main-input">
+                <label>Name of drink</label>
+                <input type="text" readonly id="nomen">
+            </div>
+            <div class="main-input">
+                <label>Quantity of drink</label>
+                <input type="number" id="amount">
+                <div class="wrong"></div>
+            </div>
+            <div class="main-input">
+                <label>Recipent address</label>
+                <input type="text" placeholder="Enter your residential address" id="location">
+                <div class="wrong"></div>
+            </div>
+            <div class="main-input">
+                <label>City</label>
+                <input type="text" placeholder="Enter your City of residence" id="state">
+                <div class="wrong"></div>
+            </div>
+            <div class="main-input">
+                <label>Zip-code</label>
+                <input type="number" placeholder="Enter Zip code of city" id="code">
+                <div class="wrong"></div>
+            </div>
+            <div class="submitbtn">
+                <button>Order</button>
+                <button id="cancel">Cancel</button>
+            </div>
+        </form>
+        <div id="announce">
+            <h3>Please fill out the form to place your order</h3>
+        </div>
+    </div>
+    <script>
+        var btn1 = document.getElementById('btnclick')  
+        let btn2 = document.getElementById('btnclick2')
+        var btn3 = document.getElementById('btnclick3')
+        var btn4 = document.getElementById('btnclick4')
+        var btn5 = document.getElementById('btnclick5')
+        var btn6 = document.getElementById('btnclick6')
+
+        let txt1 = document.getElementById('text1')
+        const txt2 = document.getElementById('text2')
+        var txt3 = document.getElementById('text3')
+        let txt4 = document.getElementById('text4')
+        let txt5 = document.getElementById('text5')
+        var txt6 = document.getElementById('text6')
+
+        let fnt1 = document.getElementById('font1')
+        const fnt2 = document.getElementById('font2')
+        var fnt3 = document.getElementById('font3')
+        let fnt4 = document.getElementById('font4')
+        let fnt5 = document.getElementById('font5')
+        var fnt6 = document.getElementById('font6')
+
+        let imag1 = document.getElementById('image01')
+        let imag2 = document.getElementById('image02')
+        let imag3 = document.getElementById('image03')
+        let imag4 = document.getElementById('image04')
+        let imag5 = document.getElementById('image05')
+        let imag6 = document.getElementById('image06')
+         
+        var remove = document.getElementById('cancel');
+        remove.addEventListener('click',function(){ 
+            window.location.reload()
+        })
+        let changebord = (b1,b2,b3)=>{
+          b1.style.border = '2px solid white'
+          b2.style.border = 'none'
+          b3.style.border = 'none'
+        }
+        var  wine = document.getElementById('wine')
+        const juice = document.getElementById('juice')
+        let soft = document.getElementById('soft')
+        const syrup = document.getElementById('syrup')
+
+        wine.addEventListener('click',function(){
+            changebord(wine,juice,soft)
+            insert('joyus.jpg',wineobj[0].name,wineobj[0].cost,'hands.jpg',wineobj[1]
+            .name,wineobj[1].cost,'allay.jpg',wineobj[2].name,wineobj[2].
+            cost,'Carl-Jung-Merlot-with-glass.jpg',wineobj[3].name,wineobj[3]
+            .cost,'noughty.png',wineobj[4].name,wineobj[4].cost,'french.jpg',wineobj[5]
+            .name,wineobj[5].cost)
+        })
+        juice.addEventListener('click',function(){
+            changebord(juice,soft,wine)
+            insert('orange.jpg',juiceobj[0].name,juiceobj[0].cost,'apple.jpg'
+            ,juiceobj[1].name,juiceobj[1].cost,'blueberry.jpg',juiceobj[2].
+            name,juiceobj[2].cost,'beet.jpeg',juiceobj[3].name,juiceobj[3].cost,
+            'carrot.jpg',juiceobj[4].name,juiceobj[4].cost,'berry.png',juiceobj[5].name,
+            juiceobj[5].cost)
+        }) 
+        soft.addEventListener('click',function(){
+            changebord(soft,juice,wine) 
+            insert('Pepsi.jpg',softobj[0].name,softobj[0].cost,
+            'sprite-12oz.jpeg',softobj[1].name,softobj[1].cost,'cola.jpg',
+            softobj[2].name,softobj[2].cost,'sparcsh002.jpg',softobj[3].name,
+            softobj[3].cost,'mirinda-soft-drink-orange-flavour.jpg',softobj
+            [4].name,softobj[4].cost,'Teem-soda-can-33cl.jpg',softobj[5].name,softobj
+            [5].cost)
+        })
+        function insert(image1,nomen1,cost1,image2,
+                        nomen2,cost2,image3,nomen3,cost3,image4,
+                        nomen4,cost4,image5,nomen5,cost5,image6,
+                        nomen6,cost6){
+            imag1.src = image1
+            txt1.innerHTML = nomen1;
+            fnt1.innerHTML = cost1
+            imag2.src = image2
+            txt2.innerHTML = nomen2
+            fnt2.innerHTML= cost2
+            imag3.src = image3
+            txt3.innerHTML = nomen3
+            fnt3.innerHTML= cost3
+            imag4.src = image4
+            txt4.innerHTML = nomen4
+            fnt4.innerHTML= cost4
+            imag5.src = image5
+            txt5.innerHTML = nomen5
+            fnt5.innerHTML= cost5
+            imag6.src = image6
+            txt6.innerHTML = nomen6
+            fnt6.innerHTML= cost6
+        }
+        var wineobj = [{
+            name:"Joyus",
+            cost:"$7.20"
+        },{
+            name:"Hands on heart",
+            cost:"$8.50"
+        },{
+            name:"Allay",
+            cost:"$5.00"
+        },{
+            name:"Carl jung",
+            cost:"$7.40"
+        },{
+            name:"Noughty",
+            cost:"$9.56"
+        },{
+            name:"French bloom",
+            cost:"$8.56"
+        }]
+
+        let juiceobj = [{
+            name:"Orange juice",
+            cost:"$3.00"
+        },{
+            name:"Apple juice",
+            cost:"$2.50"
+        },{
+            name:"Blueberry juice",
+            cost:"$2.43"
+        },{
+            name:"Beet juice",
+            cost:"$1.87"
+        },{
+            name:'Carrot juice',
+            cost:'$3.50'
+        },{
+            name:"Strawberry juice",
+            cost:'$2.00'
+        }]
+        let softobj = [{
+            name:"Pepsi",
+            cost:"$1.00",
+        },{
+            name:'Sprite',
+            cost:"$1.20"
+        },{
+            name:"Coca cola",
+            cost:'$1.00'
+        },{
+            name:"Schweppes",
+            cost:'$1.70'
+        },{
+            name:"Mirinda",
+            cost:"$0.87"
+        },{
+            name:"Soda drink",
+            cost:"$0.72"
+        }]
+        const fill = document.getElementById('fill')
+        let hold = document.getElementById('hold')
+        var dash = document.getElementById('dash')
+        let nomen = document.getElementById('nomen')
+        var amount = document.getElementById('amount')
+        const ann = document.getElementById('announce')
+       function purchase(innerread,innerplace){
+            nomen.value = innerread
+            amount.placeholder = innerplace
+            fill.style.display = 'block'
+            dash.style.display = 'none'
+            hold.style.display = 'none'
+            setTimeout(() => {
+                ann.style.display = 'block'
+            }, 1500);
+        }
+        btn1.addEventListener('click',function(){
+            if(wine.style.border === '2px solid white'){
+                purchase(wineobj[0].name,'How many bottles of wine to order e.g 3')
+            }else if(juice.style.border === '2px solid white'){
+                purchase(juiceobj[0].name,'How many can of orange juice to order e.g 3')
+            }else if(soft.style.border === '2px solid white'){
+                purchase(softobj[0].name,'How many can of pepsi to order e.g 2')
+            }
+        })
+        btn2.addEventListener('click',function(){
+            if(wine.style.border === '2px solid white'){
+                purchase(wineobj[1].name,'How many bottles of wine to order e.g 3')
+            }else if(juice.style.border === '2px solid white'){
+                purchase(juiceobj[1].name,'How many can of apple juice to order e.g 3')
+            }else if(soft.style.border === '2px solid white'){
+                purchase(softobj[1].name,'How many can of sprite to order e.g 2')
+            }
+        })
+        btn3.addEventListener('click',function(){
+            if(wine.style.border === '2px solid white'){
+                purchase(wineobj[2].name,'How many bottles of wine to order e.g 3')
+            }else if(juice.style.border === '2px solid white'){
+                purchase(juiceobj[2].name,'How many can of blueberry juice to order e.g3')
+            }else if(soft.style.border === '2px solid white'){
+                purchase(softobj[2].name,'How many can of coca cola to order e.g 3')
+            }
+        })
+        btn4.addEventListener('click',function(){
+            if(wine.style.border === '2px solid white'){
+                purchase(wineobj[3].name,'How many bottles of wine to order e.g 3')
+            }else if(juice.style.border === '2px solid white'){
+                purchase(juiceobj[3].name,'How many can of beet juice to order e.g 3')
+            }else if(soft.style.border === '2px solid white'){
+                purchase(softobj[3].name,'How many can of schweepes to order e.g 2')
+            }
+        })
+        btn5.addEventListener('click',function(){
+            if(wine.style.border === '2px solid white'){
+                purchase(wineobj[4].name,'How many bottles of wine to order e.g 3')
+            }else if(juice.style.border === '2px solid white'){
+                purchase(juiceobj[4].name,'How many can of carrot juice to order e.g 3')
+            }else if(soft.style.border === '2px solid white'){
+                purchase(softobj[4].name,'How many can of mirinda to order e.g 2')
+            }
+        })
+        btn6.addEventListener('click',function(){
+            if(wine.style.border === '2px solid white'){
+                purchase(wineobj[5].name,'How many bottles of wine to order e.g 3')
+            }else if(juice.style.border === '2px solid white'){
+                purchase(juiceobj[5].name,'How many can of strawberry juice to order e.g 3')
+            }else if(soft.style.border === '2px solid white'){
+                purchase(softobj[5].name,'How many can of soda drink to order e.g 2')
+            }
+        }) 
+        let customername = document.getElementById('name')
+        var customail = document.getElementById('mail')
+        const custophone = document.getElementById('mobile')
+        var portion = document.getElementById('amount')
+        let area = document.getElementById('location')
+        var state = document.getElementById('state')
+        const zip = document.getElementById('code')
+
+        fill.addEventListener('submit',(e)=>{
+            e.preventDefault()
+            genfunction()
+        })
+
+        let nullval = (element,alert)=>{
+            let maintag = element.parentElement;
+            var errtag = maintag.querySelector('.wrong') 
+
+            errtag.innerHTML= alert;
+
+            maintag.classList.add('invalid')
+            maintag.classList.remove('valid')
+        }
+        const conval = (element)=>{
+            let maintag = element.parentElement;
+            var errtag = maintag.querySelector('.wrong') 
+
+            errtag.innerHTML= '';
+
+            maintag.classList.remove('invalid') 
+            maintag.classList.add('valid')
+        }
+        let mailval = (customemail)=>{
+            let codes = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return codes.test(String(customemail).toLowerCase())
+        }
+        function genfunction(){
+            let namer = customername.value.trim()
+            const mails = customail.value.trim()
+            var phone = custophone.value.trim()
+            let qty = portion.value.trim()
+            var house = area.value.trim()
+            const statee = state.value.trim()
+            let zipcode = zip.value.trim()
+           
+            if(namer === ''){
+                nullval(customername,'This field cannot be empty')
+            }else if(namer.length < 5){
+                nullval(customername,'Please enter a valid name')
+            }else {
+                conval(customername)
+            }
+
+            if(mails === ''){
+                nullval(customail,'This field cannot be empty')
+            }else if(!mailval(mails)){
+                nullval(customail,'invalid email address')
+            }else {
+                conval(customail)
+            }
+
+            if(phone === ''){
+                nullval(custophone,'This field cannot be empty')
+            }else if(phone.length < 10){
+                nullval(custophone,'This mobile number is invalid')
+            }
+            else {
+                conval(custophone)
+            }
+
+            if(qty === ''){
+                nullval(portion,'This field is required')
+            }else if(qty > 5){
+                nullval(portion,'Quantity of drink to order should be atmost 5')
+            }else {
+                conval(portion)
+            }
+            
+            if(house === ''){
+                nullval(area,'This field cannot be empty')
+            }else {
+                conval(area)
+            }
+
+            if(statee === ''){
+                nullval(state,'This field cannot be empty')
+            }else {
+                conval(state)
+            }
+
+            if(zipcode === ''){
+                nullval(zip,'This field cannot be empty')
+            }else {
+                conval(zip)
+            }
+        }
+    </script>
+</body>
+</html>

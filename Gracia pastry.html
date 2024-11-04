@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="short icon" href="strudel-pastry.jpg">
+    <title>Gracia pastry</title>
+</head>
+<body>
+    <style>
+        body {
+            background-color: gray;
+            margin: 0%; 
+            padding: 0%;
+            overflow-y: hidden;
+        }
+        #holdbtn {
+            height: 70px;
+            width: 53%;
+            display: flex;
+            flex-direction: row;
+            background-color: black;
+            margin-left: 120px;
+            margin-top: 50px;
+        }
+        #holdbtn button {
+            height: 45px;
+            width: 130px;
+            border-radius: 4px;
+            margin: auto;
+            border: none;
+            background-color: goldenrod;
+            cursor: pointer;
+            font-size: 20px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+        p {
+            margin-left: 120px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 23px;
+            color: white;
+            transform: translate(0px,-10px);
+        }
+        .meal {
+            height: 23vh;
+            width: 98%;
+            background-color: black;
+            margin-top: 10px;
+            box-shadow: 0px 0px 5px black;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        #foodbck {
+            height: 68vh;
+            width: 51%;
+            background-color: none;
+            margin-left: 120px;
+            margin-top: -20px;
+        }
+        .meal img {
+            height: 23vh;
+            width: 30%;
+        }
+        .meal h2 {
+            font-size: 20px;
+            margin-top: 50px;
+            font-weight: lighter;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-right: 30px;
+            color: white;
+            font-style: italic;
+        }
+        .order button {
+            height: 50px;
+           width: 170px;
+           background-color: goldenrod;
+           border: 2px solid white;
+           font-size: 23px;
+           font-family: Georgia, 'Times New Roman', Times, serif;
+           border-radius: 3px;
+           cursor: pointer;
+           margin-top: 60px;
+           margin-right: 10px;
+           font-weight: bold;
+           /* margin-left: 500px; */
+        }
+        .meal h5 {
+            font-size: 20px;
+            color: white;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-top: 72px;
+            margin-left: 30px;
+        }
+        form {
+            height: 95vh;
+            width: 30%;
+            background-color: white;
+            margin:auto;
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            animation-name: form;
+            animation-duration: .8s;
+            display: none;
+        }
+        @keyframes form {
+            from {
+                margin-top: 500px;
+            }
+            to {
+                margin-top: 30px;
+            }
+        }
+        .parentinfo {
+            display: flex;
+            flex-direction: column;
+        }
+        .parentinfo input {
+            height: 30px;
+            width: 70%;
+            margin: auto;
+            font-size: 15px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            padding-left: 10px;
+        }
+        .parentinfo label {
+            margin: auto;
+            margin-top: 8px;
+            font-size: 15px;
+        }
+        .submitbtn {
+            margin-left: 28%;
+            margin-top: 10px;
+        }
+        .submitbtn button{
+            height: 30px;
+            width: 100px;
+            background-color: gray;
+            border: 2px solid goldenrod;
+            font-size: 17px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .correct input {
+            border: 2px solid green;
+        }
+        .wrong input {
+            border: 3px solid rgb(173, 7, 7);
+        }
+        .false {
+            font-size: 15px;
+            text-align: center;
+            color: rgb(160, 6, 6);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        #instruct {
+            background-color: black;
+            height: 70px;
+            width: 20%;
+            border-radius: 3px;
+            margin-left: 70%;
+            margin-top: -45%;
+            display: none;
+            animation: instruction;
+            animation-duration: .8s;
+        }
+        #instruct h3 {
+            font-size: 15px;
+            color: white;
+            text-align: center;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        @keyframes instruction {
+            from {
+                margin-left: 100%;
+            }
+            to {
+                margin-left: 70%;
+            }
+        } 
+        @media screen and (max-width:480px) and (min-width:320px){
+            #holdbtn {
+            height: 70px;
+            width: 133%;
+            display: flex;
+            flex-direction: row;
+            background-color: black;
+            margin-left: 5px;
+            margin-top: 50px;
+            gap: 5px;
+        }
+        #holdbtn button {
+            height: 50px;
+            width: 180px;
+            border-radius: 4px;
+            border: none;
+            background-color: goldenrod;
+            cursor: pointer;
+            font-size: 23px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: 300px;
+        }
+        #foodbck {
+            height: 68vh;
+            width: 51%;
+            background-color: none;
+            margin-left: 20px;
+            margin-top: 70px;
+        }
+        body {
+            background-color: white;
+            margin: 0%;
+            padding: 0%;
+            width: 100%;
+            overflow-y: scroll;
+        }
+        p {
+            margin-left: 120px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 23px;
+            color: white;
+            transform: translate(0px,-10px);
+            display: none;
+        }
+        .meal {
+            height: 33vh;
+            width: 260%;
+            background-color: black;
+            margin-top: 10px;
+            box-shadow: 0px 0px 5px black;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .meal img {
+            height: 33vh;
+            width:45%;
+        }
+        .order button {
+            height: 50px;
+           width: 120px;
+           background-color: goldenrod;
+           border: 2px solid white;
+           font-size: 23px;
+           font-family: Georgia, 'Times New Roman', Times, serif;
+           border-radius: 3px;
+           cursor: pointer;
+           margin-top: 140px;
+           margin-left: -80px;
+           font-weight: bold;
+           /* margin-left: 500px; */
+        }
+        .meal h2 {
+            font-size: 28px;
+            margin-top: 50px;
+            font-weight: lighter;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-right: -12px;
+            color: white;
+            font-style: normal;
+        }
+        .meal h5 {
+            font-size: 26px;
+            color: white;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-top: 72px;
+            margin-left: 30px;
+        }
+        form {
+            height: 95vh;
+            width: 95%;
+            background-color: white;
+            margin:auto;
+            margin-top: 80px;
+            display: flex;
+            flex-direction: column;
+            animation-name: form;
+            animation-duration: .8s;
+            display: none;
+            background: none;
+        }
+        @keyframes form {
+            from {
+                margin-top: 500px;
+            }
+            to {
+                margin-top: 80px;
+            }
+        }
+        .parentinfo input {
+            height: 33px;
+            width: 70%;
+            margin: auto;
+            font-size: 18px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            border: 3px solid goldenrod;
+            padding-left: 10px;
+            border-radius: 5px;
+        }
+        .parentinfo label {
+            margin: auto;
+            margin-top: 8px;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .submitbtn {
+            margin-left: 26%;
+            margin-top: 10px;
+        }
+        .submitbtn button{
+            height: 40px;
+            width: 100px;
+            background-color: gray;
+            border: 2px solid goldenrod;
+            font-size: 20px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        .correct input {
+            border: 2px solid green;
+        }
+        .wrong input {
+            border: 2px solid rgb(201, 6, 6);
+        }
+        .false {
+            font-size: 20px;
+            text-align: center;
+            color: rgb(201, 6, 6);
+        }
+        #instruct {
+            background-color: black;
+            height: 70px;
+            width: 53%;
+            border-radius: 3px;
+            margin-left: 25%;
+            margin-top: -185%;
+            display: none;
+            animation: instruction;
+            animation-duration: .8s;
+        }
+        #instruct h3 {
+            font-size: 15px;
+            color: white;
+            text-align: center;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        @keyframes instruction {
+            from {
+                margin-left: 100%;
+            }
+            to {
+                margin-left: 25%;
+            }
+        } 
+        }
+        @media screen and (max-width:768px) and (min-width:481px){
+        #holdbtn {
+            height: 70px;
+            width: 85%;
+            display: flex;
+            flex-direction: row;
+            background-color: black;
+            margin-left: 50px;
+            margin-top: 10px;
+            gap: 20px;
+            background: none;
+        }
+        #foodbck {
+            height: 68vh;
+            width: 71%;
+            background-color: none;
+            margin-left: 50px;
+            margin-top: 10px;
+            display: block;
+        }
+        #holdbtn button {
+            height: 50px;
+            width: 130px;
+            border-radius: 4px;
+            margin: auto;
+            border: none;
+            background-color: goldenrod;
+            cursor: pointer;
+            font-size: 18px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+        p {
+            margin-left: 120px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 23px;
+            color: white;
+            transform: translate(0px,-10px);
+            display: none;
+        } 
+        .meal {
+            height: 27vh;
+            width: 123%;
+            background-color: black;
+            margin-top: 10px;
+            box-shadow: 0px 0px 5px black;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .meal img {
+            height: 27vh;
+            width: 36%;
+        }
+        .meal h2 {
+            font-size: 20px;
+            margin-top: 50px;
+            font-weight: bold;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-right: 30px;
+            color: white;
+            font-style: normal;
+        }
+        .order button {
+            height: 50px;
+           width: 170px;
+           background-color: goldenrod;
+           border: none;
+           font-size: 23px;
+           font-family: Georgia, 'Times New Roman', Times, serif;
+           border-radius: 3px;
+           cursor: pointer;
+           margin-top: 100px;
+           margin-right: 10px;
+           font-weight: bold;
+           /* margin-left: 500px; */
+        }
+        form {
+            height: 115vh;
+            width: 60%;
+            background-color: white;
+            margin:auto;
+            margin-top: 100px;
+            display: flex;
+            flex-direction: column;
+            animation-name: form;
+            animation-duration: .8s;
+            display: none;
+        }
+        @keyframes form {
+            from {
+                margin-top: 500px;
+            }
+            to {
+                margin-top: 100px;
+            }
+        }
+        body {
+            background-color: gray;
+            margin: 0%;
+            padding: 0%;
+            overflow-y: scroll;
+        }
+        .parentinfo input {
+            height: 40px;
+            width: 70%;
+            margin: auto;
+            font-size: 18px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            padding-left: 10px;
+            border: 1px solid black;
+        }
+        .parentinfo label {
+            margin: auto;
+            margin-top: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .submitbtn button{
+            height: 45px;
+            width: 100px;
+            background-color: gray;
+            border: 2px solid goldenrod;
+            font-size: 20px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        .correct input {
+            border: 2px solid green;
+        }
+        .wrong input {
+            border: 2px solid rgb(201, 6, 6);
+        }
+        .false {
+            font-size: 17px;
+            text-align: center;
+            color: rgb(201, 6, 6);
+        }
+        #instruct {
+            background-color: black;
+            height: 70px;
+            width: 30%;
+            border-radius: 3px;
+            margin-left: 35%;
+            margin-top: -117%;
+            display: none;
+            animation: instruction;
+            animation-duration: .8s;
+        }
+        @keyframes instruction {
+            from {
+                margin-left: 100%;
+            }
+            to {
+                margin-left: 35%;
+            }
+        } 
+        }
+
+    </style>
+    <section>
+        <div>
+            <div id="holdbtn">
+                <button id="pies" style="border: 2.5px solid white;">Pie</button>
+                <button id="cakes">Cake</button>
+                <button id="rolls">Roll</button>
+                <button id="dough">Doughnut</button>
+                <button id="cook">Cookie</button>
+            </div>
+        </div>
+        <p id="main-meal">Pies</p>
+        <div id="foodbck">
+            <div class="meal">
+                <img src="meat pie.jpg" alt="" id="mealphoto1">
+                <h2 id="mealnomen1">Meat pie</h2>
+                <h5 id="mealcost1">$0.56</h5>
+                <div class="order">
+                    <button id="order1">Order</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="fish pie.jpg" alt="" id="mealphoto2">
+                <h2 id="mealnomen2">Fish pie</h2>
+                <h5 id="mealcost2">$0.70</h5>
+                <div class="order">
+                    <button id="order2">Order</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="chicken pie.jpg" alt="" id="mealphoto3">
+                <h2 id="mealnomen3">Chicken pie</h2>
+                <h5 id="mealcost3">$0.75</h5>
+                <div class="order">
+                    <button id="order3">Order</button>
+                </div>
+            </div>
+        </div>
+        <form id="form">
+            <div class="parentinfo">
+                <label>Name</label>
+                <input type="text" placeholder="Enter your full name" id="name">
+                <div class="false"></div>
+            </div>
+            <div class="parentinfo">
+                <label>Email</label>
+                <input type="text" placeholder="Enter your Email-address" id="email">
+                <div class="false"></div>
+            </div>
+            <div class="parentinfo">
+                <label>Mobile</label>
+                <input type="number" placeholder="Enter your mobile number" id="phone">
+                <div class="false"></div>
+            </div>
+            <div class="parentinfo">
+                <label>Name of food</label>
+                <input type="text" readonly id="only">
+            </div>
+            <div class="parentinfo">
+                <label>Quantity of meal</label>
+                <input type="number" placeholder="Enter quantity of meal" id="portion">
+                <div class="false"></div>
+            </div>
+            <div class="parentinfo">
+                <label>Recipent address</label>
+                <input type="text" placeholder="Enter your residential address" id="address">
+                <div class="false"></div>
+            </div>
+            <div class="parentinfo">
+                <label>City</label>
+                <input type="text" placeholder="Enter city of residence" id="city">
+                <div class="false"></div>
+            </div>
+            <div class="parentinfo">
+                <label>Zip-code</label>
+                <input type="number" placeholder="Enter Zip-code of city" id="zip">
+                <div class="false"></div>
+            </div>
+            <div class="submitbtn">
+                <button>Order</button>
+                <button id="absence">Cancel</button>
+            </div>
+        </form>
+        <div id="instruct">
+            <h3>Please fill out the form to place your order.</h3>
+        </div>
+    </section>
+    <script>
+        let pier = document.getElementById('pies')
+        var caker = document.getElementById('cakes') 
+        const roller = document.getElementById('rolls')
+        const nut = document.getElementById('dough')
+        var cook = document.getElementById('cook')
+        
+        var orderbtn1 = document.getElementById('order1')
+        let orderbtn2 = document.getElementById('order2')
+        const orderbtn3 = document.getElementById('order3')
+
+        let mainfood = document.getElementById('main-meal')
+        const meal1 = document.getElementById('mealnomen1')
+        var meal2 = document.getElementById('mealnomen2')
+        let meal3 = document.getElementById('mealnomen3')
+        const cost1 = document.getElementById('mealcost1')
+        const cost2 = document.getElementById('mealcost2')
+        const cost3 = document.getElementById('mealcost3')
+        let image1 = document.getElementById('mealphoto1')
+        let image2 = document.getElementById('mealphoto2')
+        let image3 = document.getElementById('mealphoto3') 
+        const holders = document.getElementById('holdbtn') 
+        let form = document.getElementById('form')
+        var namer = document.getElementById('name')
+        let email = document.getElementById('email')
+        const phone = document.getElementById('phone')
+        var qty = document.getElementById('portion')
+        let info = document.getElementById('instruct')
+        let fbck = document.getElementById('foodbck')
+        var ad = document.getElementById('address')
+         const city = document.getElementById('city')
+         var zip =document.getElementById('zip')
+
+        let alone = document.getElementById('only')
+        document.getElementById('absence').addEventListener('click',(e)=>{
+            e.preventDefault()
+            restore()
+        })
+
+        const restore = ()=>{
+            form.style.display = 'none'
+            info.style.display = 'none'
+            window.location.reload()
+        }
+
+        form.addEventListener('submit',(e)=>{
+            e.preventDefault() 
+            allvalidate()
+        })
+        let wronginput = (tag,echo)=>{
+           let parent = tag.parentElement
+           let falsetag = parent.querySelector('.false')
+
+           falsetag.innerHTML = echo
+           parent.classList.add('wrong')
+           parent.classList.remove('correct')
+
+        }
+        let correctinput = (tag)=>{
+           let parent = tag.parentElement
+           let falsetag = parent.querySelector('.false')
+
+           falsetag.innerHTML = ''
+           parent.classList.add('correct')
+           parent.classList.remove('wrong')
+
+        }
+         
+        function validateemail(mailer){
+            let codes = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return codes.test(String(mailer).toLowerCase());
+        }
+        function allvalidate (){
+            const nomen = namer.value.trim()
+            var mails = email.value.trim()
+            let mobile = phone.value.trim()
+            const amount = qty.value.trim()
+            const dress = ad.value.trim()
+            var cit = city.value.trim()
+            let zipper = zip.value.trim()
+
+            if(nomen === ''){
+                wronginput(namer,'please fill this field')
+            }else if(nomen.length < 5){
+                wronginput(namer,'please enter a valid name')
+            }else {
+                correctinput(namer)
+            }
+            if(mails === ''){
+                wronginput(email,'please fill this field')
+            }else if(!validateemail(mails)){
+                wronginput(email,'invalid email-address')
+            }else {
+                correctinput(email) 
+            }
+
+            if(mobile === ''){
+                wronginput(phone,'this field is required')
+            }else if(mobile.length < 10){
+                wronginput(phone,'please enter a valid mobile number')
+            }else {
+                correctinput(phone)
+            }
+
+            if(amount === ''){
+                wronginput(qty,'this field cannot be empty')
+            }else if(amount > 5){
+                wronginput(qty,'quantity of meal must not exceed 5')
+            }else {
+                correctinput(qty)
+            }
+
+            
+            if(dress === ''){
+                wronginput(ad,'Please indicate an address')
+            }else {
+                correctinput(ad)
+            }
+
+            if(cit === ''){
+                wronginput(city,'Please Enter a city name')
+            }else {
+                correctinput(city)
+            }
+
+            if(zipper === ''){
+                wronginput(zip,'Please indicate a Zip code')
+            }else {
+                correctinput(zip)
+            }
+        }
+
+        let pieobj = [{
+            name:"Meat pie",
+            cost:"$0.56"
+        },{
+            name:"Fish pie",
+            cost:"$0.70"
+        },{
+            name:"Chicken pie",
+            cost:"$0.75"
+        }]
+        var cakeobj = [{
+            name:"Queens cake",
+            cost:"$0.56"
+        },{
+            name:"sponge cake",
+            cost:"$1.63"
+        },{
+            name:"carrot cake",
+            cost:"$1.02"
+        }]
+
+        let nutobj = [{
+            name:"cake doughnut",
+            cost:"$0.85",
+        },{
+            name:"cruller",
+            cost:"$0.67"
+        },{
+            name:"Glazed doughnut",
+            cost:"$1.20"
+        }]
+
+        var rollobj = [{
+            name:"Spring rolls",
+            cost:"$1.80"
+        },{
+            name:"Mutton rolls",
+            cost:"$1.50"
+        },{
+            name:"Vegetable egg rolls",
+            cost:"$0.80"
+        }]
+        
+        let inactive = ()=>{
+            fbck.style.display = 'none'
+            mainfood.style.display = 'none'
+            holders.style.display = 'none'
+        }
+        function showform(readonly){
+            form.style.display = 'block'
+            return alone.value = readonly
+        }
+        orderbtn1.addEventListener('click',function(){
+            inactive()
+            setTimeout(() => {
+                info.style.display = 'block'
+            }, 1500);
+            if(mainfood.innerHTML === 'Pies'){
+                showform(pieobj[0].name)
+            }else if(mainfood.innerHTML === 'Cakes'){
+                showform(cakeobj[0].name)
+            }else if(mainfood.innerHTML === 'Rolls'){
+                showform(rollobj[0].name)
+            }else if(mainfood.innerHTML === 'Doughnuts'){
+                showform(nutobj[0].name)
+            }else if(mainfood.innerHTML === 'Cookies'){
+                showform('Oatmeal cookie')
+            }
+        })
+        orderbtn2.addEventListener('click',function(){
+            inactive()
+            setTimeout(() => {
+                info.style.display = 'block'
+            }, 1500);
+            if(mainfood.innerHTML === 'Pies'){
+                showform(pieobj[1].name)
+            }else if(mainfood.innerHTML === 'Cakes'){
+                showform(cakeobj[1].name)
+            }else if(mainfood.innerHTML === 'Rolls'){
+                showform(rollobj[1].name)
+            }else if(mainfood.innerHTML === 'Doughnuts'){
+                showform(nutobj[1].name)
+            }else if(mainfood.innerHTML === 'Cookies'){
+                showform('Chocolate cookie')
+            }
+        })
+        orderbtn3.addEventListener('click',function(){
+              inactive()
+            setTimeout(() => {
+                info.style.display = 'block'
+            }, 1500);
+                      if(mainfood.innerHTML === 'Pies'){
+                showform(pieobj[2].name)
+            }else if(mainfood.innerHTML === 'Cakes'){
+                showform(cakeobj[2].name)
+            }else if(mainfood.innerHTML === 'Rolls'){
+                showform(rollobj[2].name)
+            }else if(mainfood.innerHTML === 'Doughnuts'){
+                showform(nutobj[2].name)
+            }else if(mainfood.innerHTML === 'Cookies'){
+                showform('Buttered cookie')
+            }
+        })
+        let falseborder = (able,unable,unable2,unable3,unable4,unable5)=>{
+            able.style.border = '3px solid white'
+            unable.style.border = 'none'
+            unable2.style.border = 'none'
+            unable3.style.border = 'none'
+            unable4.style.border = 'none'
+            unable5.style.border = 'none'
+        }
+        function pass(header,img01,nomen01,cost01,img02,nomen02,cost02,img03,nomen03,cost03){
+            mainfood.innerHTML = header
+            image1.src = img01
+            meal1.innerHTML = nomen01
+            cost1.innerHTML = cost01
+            image2.src = img02
+            meal2.innerText = nomen02
+            cost2.innerHTML = cost02
+            image3.src = img03
+            meal3.innerText = nomen03
+            cost3.innerHTML = cost03
+        }
+        pier.addEventListener('click',function(){
+            pass('Pies','meat pie.jpg',pieobj[0].name,pieobj[0].cost,
+            'fish pie.jpg',pieobj[1].name,pieobj[1].cost,'chicken pie.jpg',
+            pieobj[2].name,pieobj[2].cost)
+            falseborder(pier,caker,roller,nut,cook)
+        })
+        caker.addEventListener('click',function(){
+            pass('Cakes','Queen-Cakes4.jpg',cakeobj[0].name,
+            cakeobj[0].cost,'sponge cake.jpg',cakeobj[1].name,cakeobj[1].cost,
+            'carrot cake.jpg',cakeobj[2].name,cakeobj[2].cost)
+            falseborder(caker,pier,roller,nut,cook)
+        })
+        roller.addEventListener('click',function(){
+            pass('Rolls','spring rolls.jpg',rollobj[0].name,rollobj[0].cost,
+            'mutton rolls.jpg',rollobj[1].name,rollobj[1].cost,'veg egg.jpg',
+            rollobj[2].name,rollobj[2].cost)
+            falseborder(roller,caker,pier,nut,cook)
+        })
+        nut.addEventListener('click',function(){
+            pass('Doughnuts','cake nut.jpg',nutobj[0].name,nutobj[0].cost,
+            'cruller.jpg',nutobj[1].name,nutobj[1].cost,'glazed nut.jpg',
+            nutobj[2].name,nutobj[2].cost)
+            falseborder(nut,pier,roller,caker,cook)
+        })
+        cook.addEventListener('click',function(){
+            pass('Cookies','Oatmeal-Raisin-Cookies-2.jpg','Oatmeal cookie',
+            '$0.87','choco cookie.jpg','Chocolate cookie','$1.20','butter  cookies.jpg',
+            'Buttered cookie','$0.75')
+            falseborder(cook,pier,nut,roller,caker)
+        })
+    </script>
+</body>
+</html>
