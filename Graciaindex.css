@@ -308,7 +308,7 @@ li {
 #orderdiv form {
     height: 80vh;
     width: 55%;
-    background-image: url("/Gracia photos/Gracia logo.jpg");
+    background-image: url("Gracia logo.jpg");
     background-position: center;
     background-size: 80%;
     background-repeat: no-repeat;
@@ -356,7 +356,7 @@ li {
 #reserve {
     height: 65vh;
     width: 100%;
-    background-image: url("Gracia photos/distracted-driving-can-increase-the-chance-of-a-road-accident.jpg");
+    background-image: url("distracted-driving-can-increase-the-chance-of-a-road-accident.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
